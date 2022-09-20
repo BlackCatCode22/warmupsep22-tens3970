@@ -11,31 +11,30 @@ public class WarmUp {
             if (myFile.createNewFile()){
                 System.out.println("Pog, new file made.");
             } else {
-                System.out.println("File already existed man.");
+                System.out.println("Failed to create a new file.");
             }
         } catch (IOException e) {
-            System.out.println("Failed");
+            System.out.println("Error:");
             e.printStackTrace();
         }
         try {
-            FileWriter bobby = new FileWriter("C:/Users/Toby/Desktop/Programming/CIT Projects/WarmUp9-20/textFiles/test.txt");
-            bobby.write("Yooo?");
-            bobby.write("Yooo?");
-            bobby.close();
-            System.out.println("This did in fact work.");
+            FileWriter Writer = new FileWriter("C:/Users/Toby/Desktop/Programming/CIT Projects/warmupsep22-tens3970/textFiles/test.txt");
+            Writer.write("This is the text written into the new file");
+            Writer.close();
+            System.out.println("Successfully Wrote into a new file.");
         }catch (IOException e){
-            System.out.println("Couldn't write for some reason");
+            System.out.println("Error:");
             e.printStackTrace();
         }
         try {
-            File blob = new File("C:/Users/Toby/Desktop/Programming/CIT Projects/WarmUp9-20/textFiles/test.txt");
-            Scanner blobJR = new Scanner(blob);
-            while (blobJR.hasNextLine()){
-                String data = blobJR.nextLine();
+            File fileToRead = new File("C:/Users/Toby/Desktop/Programming/CIT Projects/warmupsep22-tens3970/textFiles/test.txt");
+            Scanner obj = new Scanner(fileToRead);
+            while (obj.hasNextLine()){
+                String data = obj.nextLine();
                 System.out.println(data);
             }
         } catch (IOException e){
-            System.out.println("Couldn't Write");
+            System.out.println("Error:");
             e.printStackTrace();
         }
     }
